@@ -1,0 +1,259 @@
+body {
+	background-color: #fff;
+	color: #555;
+	font-family: 'Avenir Next','Lantinghei SC';
+	font-size: 20px;
+
+	font-smoothing:antialiased;
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+}
+
+html,body {height: 100%;}
+ 
+header {
+	width: 100%;
+	height: 50px;
+	background-color: rgba(34,34,34,0.5);
+	position: fixed;
+	z-index: 5;
+}
+.title{
+	display: inline-block;
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 50px;
+	color: #ddd; 
+	margin-left: 40px;
+}
+.header-nav{
+	list-style: none;
+	float: right;
+}
+.header-nav li {
+	display: inline-block;
+	line-height: 50px;
+	width: 60px;
+	text-align: center;
+	font-style: 18px;
+	color: #eee;
+}
+.header-nav li:hover {
+	border-bottom: 3px solid #ddd;
+}
+
+.wrap {
+	width: 100%;
+	/*height: calc(100% - 50px);*/
+	height: 100%;
+	position: absolute;
+	background-color: #333;
+	
+	perspective:800px;
+	-webkit-perspective:800px;
+	-moz-perspective:800px;
+
+	overflow: hidden;
+}
+
+/*专辑海报样式*/
+.photo{
+	width: 360px;
+	height: 385px;
+	position: absolute;
+	z-index: 1;
+	box-shadow: 0 0 1px rgba(0,0,0,.1);
+}
+.side{
+	width: 100%;
+	height: 100%;
+	background-color: #eee;
+	box-sizing: border-box;
+	padding: 15px;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.side-front{}
+.side-front .image img{
+	width: 100%;
+	height: 100%;
+}
+.side-front .caption {
+	text-align: center;
+	font-weight: bold;
+	font-size:15px;
+	line-height: 30px;
+}
+
+
+/*当前选中专辑海报样式*/
+.photo_center{
+	width: 380px;
+	height: 410px;
+	left: 50%;
+	top: 50%;
+	margin: -225px 0 0 -210px;
+	z-index: 2;
+}
+.photo_center .caption{
+	font-size: 18px;
+	line-height: 40px;
+}
+
+/*负责翻转*/
+.photo-wrap {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	transform-style: preserve-3d;
+	-webkit-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+
+	transition: all .6s;
+	-webkit-transition: all .6s;
+	-moz-transition: all .6s;
+}
+.side-front {
+	transform: rotateY(0deg);
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+}
+.side-back {
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+}
+.side {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+}
+
+.photo_front .photo-wrap{
+	transform: rotateY(0deg);
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+}
+.photo_back .photo-wrap{
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+}
+
+
+/*背面专辑详细信息样式*/
+.side-back {
+	/*display: none;*/
+	color: #333;
+	line-height: 1.5em;
+}
+.side-back p{
+	display: inline-block;
+}
+.photo-wrap .album {
+	text-align: center;
+	font-size: 30px;
+	color: #333;
+	font-weight: bold;
+	line-height: 2em;
+}
+.photo-wrap .desc {
+	font-size: 16px;
+}
+
+/* 添加控制按钮的样式 */
+/*@font-face{
+    font-family: 'icomoon';
+    src: url('image/icomoon.woff') format('woff');
+    font-weight: normal;
+    font-size: normal;
+}*/
+.nav{
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    height: 30px;
+    line-height: 30px;
+    bottom: 20px;
+    z-index: 3;
+    text-align: center;
+}
+/* 普通样式 */
+.nav .i{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #aaa;
+    text-align: center;
+    border-radius: 50px;
+    transform: scale(.5);
+    -webkit-transform: scale(.5);
+    -moz-transform: scale(.5);
+    -o-transform: scale(.5);
+    -ms-transform: scale(.5);
+
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+}
+/* 设置并显示字体图标 */
+.nav .i:after{
+    content: '\e965';
+    font-family: 'icomoon';
+    font-size: 80%;
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+}
+/* 选中样式 */
+.nav .i_current{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+}
+.nav .i_current:after{
+    opacity: 1;
+}
+/* 背面样式 */
+.nav .i_back{
+    background-color: #555;
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+}            
+
+/*About弹出层*/
+.mask{
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(34,34,34,0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+#about {
+	display: none;
+	width: 560px;
+	height: 200px;
+	/*background: url("../image/Playing-With-Fire.jpg") no-repeat;*/
+	/*background-color: #eee;*/
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	z-index: 12;
+	text-align: center;
+}

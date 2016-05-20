@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>GHRecord's Country Club</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body onselectstart="return false;">
+	
+	<header>
+		<span class="logo"></span>
+		<h1 class="title">GHRecord's Country Club</h1>
+		<ul class="header-nav">
+			<a href="#"><li>Home</li></a>
+			<a href="#"><li>Albums</li></a>
+			<a href="#"><li>About</li></a>
+		</ul>
+	</header>
+	<div class="wrap" id="wrap">
+
+		<!-- photo 负责平移和旋转 
+		<div class="photo photo_front" id="photo_{{index}}" onclick="turn(this)">-->
+			
+			<!-- photo-wrap 负责翻转 
+			<div class="photo-wrap ">
+				<div class="side side-front">
+					<p class="image">
+						<img src="image/{{img}}">
+					</p>
+					<p class="caption">{{caption}}</p>
+				</div>
+			
+
+				<div class="side side-back">
+					<h2 class="album">{{album}}</h2>
+					<div><span>歌手：</span><p class="artist">{{artist}}</p></div>
+					<div><span>发行时间：</span><p class="sell-date">{{date}}</p></div>
+					<span>专辑介绍：</span><p class="desc">{{desc}}</p>
+
+					
+				</div>
+			</div>
+		</div>-->
+	</div>
+	<div class="mask"></div>
+	<div id="about" class="about photo_front" onclick="turn(this)">
+		<div class="photo-wrap ">
+			<div class="side side-front">
+				<p class="image">
+					<img src="image/logo.png">
+				</p>
+				<p class="caption">GHRecord's Country Club</p>
+			</div>
+		
+
+			<div class="side side-back">
+				<h2 class="album">GHRecord's Country Club</h2>
+				<p class="artist">关注美国乡村音乐</p>
+				<p>分享最新的乡村专辑信息和乐评</p>
+				<p>后续会添加更多专辑信息和单曲信息。敬请期待。</p>
+				<p>联系我(资深村民)：617725231@qq.com</p>
+				
+			</div>
+		</div>
+		<!-- <h1>GHRecord's Country Club</h1>
+		<p>关注美国乡村音乐</p>
+		<p>分享最新的乡村专辑信息和乐评</p>
+		<p>后续会添加更多专辑信息和单曲信息。敬请期待。</p>
+		<p>联系我(资深村民)：617725231@qq.com</p> -->
+	</div>
+	
+	<script type="text/javascript" src="data.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
+
